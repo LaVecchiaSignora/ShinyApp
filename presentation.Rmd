@@ -1,0 +1,43 @@
+---
+title: "Reproducible Pitch Presentation"
+author: "Rasul Balayev"
+date: "2/1/2021"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##  Reproducible Pitch Presentation Project
+This presentation is a part of Developing Data Products course's Final Assignment. For this project shinny app Diamond created. This app predicts the price of diamond based on inputs given by user.
+
+## How to use app
+By using diamond library, system fits a linear model to predict the price of diamond based on the carat
+
+Application link: https://lavecchiasignora.shinyapps.io/Diamond/
+
+Github repository for codes : https://github.com/LaVecchiaSignora/ShinyApp
+
+
+## Dataset
+Diamond dataset in UsingR is used
+
+```{r, include=FALSE}
+library(UsingR)
+data(diamond)
+```
+
+```{r summary}
+str(diamond)
+```
+
+## Slide with Plot
+
+```{r, include=FALSE}
+library(plotly)
+```
+
+```{r, echo=FALSE}
+plot_ly(diamond, x = ~carat, y = ~price, type = "scatter", mode="markers")
+```
